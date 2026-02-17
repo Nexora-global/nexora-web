@@ -162,6 +162,60 @@
     messages.scrollTop = messages.scrollHeight;
   }
 </script>
+<script>
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
+  const chatMessages = document.getElementById("chat-messages");
+
+  function addMessage(sender, text) {
+    const msg = document.createElement("div");
+    msg.className = sender === "bot" ? "bot-message" : "user-message";
+    msg.textContent = text;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function nexoraAIResponse(userText) {
+    const text = userText.toLowerCase();
+
+    if (text.includes("hola") || text.includes("buenas")) {
+      return "Hola. Soy Nexora AI Assistant, el asistente inteligente oficial de Nexora Global. ¿En qué puedo ayudarte hoy?";
+    }
+
+    if (text.includes("qué es") || text.includes("quienes son") || text.includes("nexora")) {
+      return "Nexora Global es una empresa global de tecnología e inteligencia artificial especializada en automatización de ventas, atención al cliente y optimización de procesos empresariales.";
+    }
+
+    if (text.includes("whatsapp")) {
+      return "Implementamos agentes de inteligencia artificial para WhatsApp Business que atienden, califican prospectos y optimizan ventas 24/7. ¿Buscás automatizar atención, ventas o ambos?";
+    }
+
+    if (text.includes("precio") || text.includes("costo")) {
+      return "Diseñamos soluciones a medida según el negocio, volumen de mensajes y objetivos. Para cotizar correctamente, necesito conocer mejor tu empresa.";
+    }
+
+    if (text.includes("empresa") || text.includes("negocio")) {
+      return "Perfecto. Para ayudarte mejor, ¿en qué rubro opera tu empresa y qué proceso te gustaría automatizar primero?";
+    }
+
+    return "Gracias por tu mensaje. Para diseñar una solución alineada a tu empresa, ¿podrías contarme en qué rubro operás y qué te gustaría automatizar?";
+  }
+
+  chatForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const userText = chatInput.value.trim();
+    if (!userText) return;
+
+    addMessage("user", userText);
+    chatInput.value = "";
+
+    setTimeout(() => {
+      const response = nexoraAIResponse(userText);
+      addMessage("bot", response);
+    }, 500);
+  });
+</script>
 
 </body>
 </html>

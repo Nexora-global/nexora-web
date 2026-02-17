@@ -4,22 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nexora Global</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* ===== Estilos generales ===== */
-    body { font-family: 'Arial', sans-serif; margin:0; padding:0; background-color: #f0f2f5; color:#333;}
-    header { background-color:#0a1f44; color:#fff; padding: 20px 40px; display:flex; justify-content:space-between; align-items:center;}
-    header h1 { margin:0; font-size:2rem;}
-    header p { margin:0; font-size:1rem; color:#d0d4e0;}
-    main { padding: 40px;}
-    section { margin-bottom: 60px;}
-    h2 { font-size:1.8rem; margin-bottom:20px; color:#0a1f44;}
-    p { font-size:1.1rem; line-height:1.6; }
-    .services { display:flex; gap:30px; flex-wrap:wrap;}
-    .service { flex:1 1 250px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); text-align:center;}
-    .service img { width:80px; margin-bottom:15px;}
+    body { margin:0; font-family:'Montserrat', sans-serif; background:#f5f6fa; color:#333;}
+    header { background:#0a1f44; color:#fff; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; }
+    header h1 { margin:0; font-size:2rem; }
+    header p { margin:0; font-size:1rem; color:#d0d4e0; }
     
-    /* ===== Chat flotante ===== */
-    .chat-container { position:fixed; bottom:20px; right:20px; width:350px; background:#fff; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.3); padding:15px; z-index:999;}
+    /* Hero */
+    .hero { background:url('https://images.unsplash.com/photo-1581091870624-d5edc1150d7b?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover; padding:120px 40px; text-align:center; color:#fff; }
+    .hero h2 { font-size:3rem; margin-bottom:20px; text-shadow: 2px 2px 6px rgba(0,0,0,0.6);}
+    .hero p { font-size:1.3rem; margin-bottom:30px; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);}
+    .hero button { padding:15px 30px; font-size:1.1rem; border:none; border-radius:5px; background:#007bff; color:#fff; cursor:pointer; }
+    .hero button:hover { background:#0056b3; }
+
+    main { padding: 60px 40px; max-width:1200px; margin:0 auto; }
+
+    section { margin-bottom:80px; }
+    h2 { font-size:2rem; margin-bottom:30px; color:#0a1f44; }
+    p { font-size:1.1rem; line-height:1.6; }
+
+    /* Servicios */
+    .services { display:flex; gap:30px; flex-wrap:wrap; justify-content:center; }
+    .service { flex:1 1 300px; background:#fff; padding:30px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s; }
+    .service:hover { transform: translateY(-10px); }
+    .service img { width:100px; margin-bottom:20px; }
+    .service h3 { font-size:1.5rem; margin-bottom:10px; }
+    .service p { font-size:1rem; }
+
+    /* Clientes / Testimonios */
+    .clients { display:flex; gap:30px; flex-wrap:wrap; justify-content:center; align-items:center; }
+    .client-logo { flex:1 1 150px; opacity:0.7; transition: opacity 0.3s; }
+    .client-logo:hover { opacity:1; }
+
+    /* Chat flotante */
+    .chat-container { position:fixed; bottom:20px; right:20px; width:350px; background:#fff; border-radius:10px; box-shadow:0 4px 25px rgba(0,0,0,0.3); padding:15px; z-index:999;}
     .chat-messages { height:250px; overflow-y:auto; border:1px solid #ccc; padding:10px; border-radius:5px; background:#fafafa; margin-bottom:10px;}
     .user-message { text-align:right; margin:5px 0; padding:5px 10px; background:#007bff; color:#fff; border-radius:10px; display:inline-block; }
     .bot-message { text-align:left; margin:5px 0; padding:5px 10px; background:#e5e5e5; color:#000; border-radius:10px; display:inline-block; }
@@ -27,48 +47,62 @@
     #send-btn { padding:10px 15px; border:none; background:#007bff; color:#fff; border-radius:5px; cursor:pointer; }
     #send-btn:hover { background:#0056b3; }
     form { display: flex; gap:5px; }
+
+    /* Footer */
+    footer { text-align:center; padding:20px; background:#0a1f44; color:#fff; font-size:0.9rem;}
   </style>
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
+  <!-- Header -->
   <header>
     <h1>Nexora Global</h1>
     <p>Liderando la automatización e inteligencia artificial a nivel global</p>
   </header>
 
-  <!-- ===== Main ===== -->
-  <main>
-    <!-- Sección de Bienvenida -->
-    <section>
-      <h2>Bienvenido a Nexora Global</h2>
-      <p>Somos la empresa líder en tecnología e inteligencia artificial. Transformamos la forma en que las empresas automatizan ventas, atención al cliente y procesos internos, permitiéndote crecer y enfocarte en lo que realmente importa: tu negocio.</p>
-    </section>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Transformamos tu negocio con Inteligencia Artificial</h2>
+    <p>Implementamos soluciones tecnológicas de vanguardia para automatizar ventas, atención al cliente y procesos internos.</p>
+    <button>Contactar ahora</button>
+  </div>
 
-    <!-- Sección de Servicios -->
+  <main>
+    <!-- Servicios -->
     <section>
       <h2>Nuestros Servicios</h2>
       <div class="services">
         <div class="service">
           <img src="https://img.icons8.com/ios-filled/100/000000/chatbot.png" alt="Bot WhatsApp">
           <h3>Bots para WhatsApp</h3>
-          <p>Automatizamos la atención y las ventas 24/7 para que no pierdas ninguna oportunidad.</p>
+          <p>Atención y ventas 24/7, con inteligencia artificial que califica prospectos y filtra clientes potenciales.</p>
         </div>
         <div class="service">
           <img src="https://img.icons8.com/ios-filled/100/000000/artificial-intelligence.png" alt="Asistente Web">
-          <h3>Asistentes para Web</h3>
-          <p>Implementamos asistentes inteligentes que ayudan a tus clientes y mejoran la experiencia de navegación.</p>
+          <h3>Asistentes Web</h3>
+          <p>Asistentes inteligentes que guían a tus clientes y optimizan la experiencia de navegación de tu sitio.</p>
         </div>
         <div class="service">
           <img src="https://img.icons8.com/ios-filled/100/000000/automation.png" alt="Automatización">
           <h3>Automatización de Procesos</h3>
-          <p>Optimiza tus procesos internos para ahorrar tiempo y aumentar la eficiencia de tu empresa.</p>
+          <p>Optimizamos tus procesos internos para ahorrar tiempo, recursos y aumentar la eficiencia de tu negocio.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Clientes / Testimonios -->
+    <section>
+      <h2>Nuestros Clientes</h2>
+      <div class="clients">
+        <img class="client-logo" src="https://img.icons8.com/color/96/000000/apple-logo.png" alt="Cliente 1">
+        <img class="client-logo" src="https://img.icons8.com/color/96/000000/google-logo.png" alt="Cliente 2">
+        <img class="client-logo" src="https://img.icons8.com/color/96/000000/microsoft.png" alt="Cliente 3">
+        <img class="client-logo" src="https://img.icons8.com/color/96/000000/amazon.png" alt="Cliente 4">
       </div>
     </section>
   </main>
 
-  <!-- ===== Chat flotante ===== -->
+  <!-- Chat flotante -->
   <div class="chat-container">
     <div id="chat-messages" class="chat-messages"></div>
     <form id="chat-form">
@@ -77,7 +111,7 @@
     </form>
   </div>
 
-  <!-- ===== Script del bot Nexora ===== -->
+  <!-- Script del bot Nexora -->
   <script>
     const chatForm = document.getElementById("chat-form");
     const chatInput = document.getElementById("chat-input");
@@ -133,5 +167,8 @@
     });
   </script>
 
+  <footer>
+    © 2026 Nexora Global. Todos los derechos reservados.
+  </footer>
 </body>
 </html>

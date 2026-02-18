@@ -1,247 +1,198 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexora Global | Enterprise AI & Automation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #0056FF;
-            --dark-text: #111111;
-            --light-bg: #F5F5F5;
-        }
-        body { font-family: 'Inter', sans-serif; color: var(--dark-text); scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--dark-text); }
-        .section-padding { padding-top: 80px; padding-bottom: 80px; }
-        .btn-primary { background-color: var(--primary-blue); color: white; border-radius: 6px; transition: all 0.3s; }
-        .btn-primary:hover { background-color: #0044cc; transform: translateY(-1px); }
-        .btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); border-radius: 6px; transition: all 0.3s; }
-        .btn-outline:hover { background-color: rgba(0, 86, 255, 0.05); }
-        .card-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #eee; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Global | Enterprise AI & Automation</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary-blue: #0056FF;
+    --secondary-accent: #00C4FF;
+    --dark-text: #111111;
+    --light-bg: #F5F5F5;
+}
+body { font-family: 'Inter', sans-serif; color: var(--dark-text); scroll-behavior: smooth; }
+h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--dark-text); }
+.section-padding { padding-top: 80px; padding-bottom: 80px; }
+.btn-primary { background: linear-gradient(90deg, var(--primary-blue), var(--secondary-accent)); color: white; border-radius: 8px; transition: all 0.3s; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,86,255,0.3); }
+.btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); border-radius: 8px; transition: all 0.3s; }
+.btn-outline:hover { background-color: rgba(0,86,255,0.05); }
+.card-shadow { box-shadow: 0 8px 24px rgba(0,0,0,0.08); border: 1px solid #eee; transition: all 0.3s; }
+.card-shadow:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.15); }
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.counter { font-weight: 700; }
+</style>
 </head>
 <body class="bg-white">
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter text-black">NEXORA<span class="text-[#0056FF]">GLOBAL</span></div>
-            <div class="hidden lg:flex space-x-8 text-sm font-medium">
-                <a href="#servicios" class="hover:text-blue-600 transition">Servicios</a>
-                <a href="#soluciones" class="hover:text-blue-600 transition">Soluciones</a>
-                <a href="#testimonios" class="hover:text-blue-600 transition">Testimonios</a>
-                <a href="#resultados" class="hover:text-blue-600 transition">Resultados</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="text-sm font-semibold">Iniciar Sesión</a>
-                <a href="#contacto" class="btn-primary px-6 py-2.5 text-sm font-bold">Solicitar Demo</a>
-            </div>
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tighter text-black">NEXORA<span class="text-[#0056FF]">GLOBAL</span></div>
+        <div class="hidden lg:flex space-x-8 text-sm font-medium">
+            <a href="#servicios" class="hover:text-blue-600 transition">Servicios</a>
+            <a href="#soluciones" class="hover:text-blue-600 transition">Soluciones</a>
+            <a href="#testimonios" class="hover:text-blue-600 transition">Testimonios</a>
+            <a href="#resultados" class="hover:text-blue-600 transition">Resultados</a>
         </div>
-    </nav>
-
-    <section class="relative overflow-hidden bg-white pt-20 pb-32">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h1 class="text-5xl lg:text-6xl leading-tight mb-6">
-                    Transformamos la forma en que empresas alrededor del mundo <span class="text-[#0056FF]">crecen con IA</span>
-                </h1>
-                <p class="text-lg text-gray-600 mb-10 max-w-lg leading-relaxed">
-                    Bots para WhatsApp, asistentes web y soluciones SaaS para impulsar el crecimiento de tu empresa con tecnología de vanguardia.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contacto" class="btn-primary px-8 py-4 text-lg font-bold">Solicitar Demo</a>
-                    <a href="#servicios" class="btn-outline px-8 py-4 text-lg font-bold">Ver Servicios</a>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="absolute -right-20 -top-20 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-70"></div>
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="IA Technology" class="rounded-2xl card-shadow relative z-10">
-            </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-sm font-semibold">Iniciar Sesión</a>
+            <a href="#contacto" class="btn-primary px-6 py-2.5 text-sm font-bold">Solicitar Demo</a>
         </div>
-    </section>
-
-    <section class="py-12 border-y border-gray-100 bg-[#F5F5F5]/30">
-        <div class="max-w-7xl mx-auto px-6">
-            <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">Confían en nosotros: startups y corporaciones líderes</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale">
-                <span class="text-xl font-bold">TechCorp</span>
-                <span class="text-xl font-bold">DataFlow</span>
-                <span class="text-xl font-bold">CloudNet</span>
-                <span class="text-xl font-bold">SecureBase</span>
-                <span class="text-xl font-bold">InnovateLab</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicios" class="section-padding bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl mb-4">Todo lo que necesitas para Hacer Crecer tu Negocio</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Nuestra plataforma integral proporciona todas las herramientas que tu equipo necesita para trabajar más inteligente, rápido y eficiente.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl card-shadow flex flex-col h-full">
-                    <div class="text-[#0056FF] mb-6">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                    </div>
-                    <h3 class="text-xl mb-4">Bots para WhatsApp e IA Web</h3>
-                    <p class="text-gray-600 text-sm mb-6 flex-grow">Atención 24/7 capaz de interactuar con clientes, calificar prospectos y gestionar interacciones.</p>
-                    <ul class="text-sm space-y-3 mb-8 text-gray-500">
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Respuestas automáticas</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Integración con CRM</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Análisis de métricas</li>
-                    </ul>
-                    <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
-                </div>
-
-                <div class="bg-[#F5F5F5] p-8 rounded-xl flex flex-col h-full">
-                    <div class="text-[#0056FF] mb-6">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl mb-4">Automatización de Procesos</h3>
-                    <p class="text-gray-600 text-sm mb-6 flex-grow">Optimización de tareas repetitivas y flujos de trabajo, acelerando la operación hasta 10x.</p>
-                    <ul class="text-sm space-y-3 mb-8 text-gray-500">
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Flujos personalizados</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Conexión con herramientas</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Ahorro de recursos</li>
-                    </ul>
-                    <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl card-shadow flex flex-col h-full">
-                    <div class="text-[#0056FF] mb-6">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-xl mb-4">Consultoría Especializada</h3>
-                    <p class="text-gray-600 text-sm mb-6 flex-grow">Estrategias personalizadas para el crecimiento con soporte continuo y seguimiento.</p>
-                    <ul class="text-sm space-y-3 mb-8 text-gray-500">
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Análisis de necesidades</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Implementación ágil</li>
-                        <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Soporte dedicado</li>
-                    </ul>
-                    <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="resultados" class="bg-[#111111] py-20 text-white">
-        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-around gap-12 text-center">
-            <div>
-                <div class="text-5xl font-bold mb-2">50K+</div>
-                <div class="text-gray-400 text-sm tracking-widest uppercase">Usuarios Activos</div>
-            </div>
-            <div>
-                <div class="text-5xl font-bold mb-2">500+</div>
-                <div class="text-gray-400 text-sm tracking-widest uppercase">Reseñas Excelentes</div>
-            </div>
-            <div>
-                <div class="text-5xl font-bold mb-2">20+</div>
-                <div class="text-gray-400 text-sm tracking-widest uppercase">Países Cubiertos</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonios" class="section-padding bg-[#F5F5F5]">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl text-center mb-16">Historias de Clientes</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl card-shadow">
-                    <p class="text-gray-600 italic mb-6">"Nexora Global transformó la manera en que nuestro equipo colabora. Los insights impulsados por IA nos permitieron tomar decisiones rápidas."</p>
-                    <div class="font-bold text-sm">Sara Martínez</div>
-                    <div class="text-xs text-gray-400">VP de Operaciones, TechVision Inc.</div>
-                </div>
-                <div class="bg-white p-8 rounded-xl card-shadow">
-                    <p class="text-gray-600 italic mb-6">"Gracias a Nexora Global optimizamos nuestros procesos de ventas y aumentamos la productividad exponencialmente."</p>
-                    <div class="font-bold text-sm">Juan Pérez</div>
-                    <div class="text-xs text-gray-400">CEO, Innovate Labs</div>
-                </div>
-                <div class="bg-white p-8 rounded-xl card-shadow">
-                    <p class="text-gray-600 italic mb-6">"El equipo de Nexora transformó nuestra atención al cliente con IA de última generación. La implementación fue impecable."</p>
-                    <div class="font-bold text-sm">Laura Gómez</div>
-                    <div class="text-xs text-gray-400">CTO, CloudNet</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="section-padding bg-white">
-        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl mb-6">Plataforma Empresarial – Escala tu Negocio Sin Límites</h2>
-                <p class="text-gray-600 mb-8">Automatiza flujos de trabajo, aumenta productividad e impulsa el crecimiento global.</p>
-                <ul class="space-y-4 text-sm font-medium">
-                    <li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> SOC 2 Certificado & GDPR Compliance</li>
-                    <li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> Soporte prioritario 24/7</li>
-                </ul>
-            </div>
-            <div class="bg-white p-10 rounded-2xl card-shadow border border-gray-100">
-                <form class="space-y-4">
-                    <input type="text" placeholder="Nombre Completo" class="w-full p-3 border border-gray-200 rounded-md outline-none focus:border-blue-500">
-                    <input type="email" placeholder="Email Corporativo" class="w-full p-3 border border-gray-200 rounded-md outline-none focus:border-blue-500">
-                    <input type="text" placeholder="Nombre de la Empresa" class="w-full p-3 border border-gray-200 rounded-md outline-none focus:border-blue-500">
-                    <select class="w-full p-3 border border-gray-200 rounded-md outline-none focus:border-blue-500 text-gray-500">
-                        <option>Tamaño del equipo</option>
-                        <option>1-10 empleados</option>
-                        <option>11-50 empleados</option>
-                        <option>50+ empleados</option>
-                    </select>
-                    <button class="btn-primary w-full py-4 font-bold shadow-lg shadow-blue-500/20">Solicitar Demo Gratis</button>
-                    <p class="text-[10px] text-gray-400 text-center">Al registrarte, aceptas nuestros Términos y Política de Privacidad.</p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-[#111111] text-white pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
-            <div class="col-span-2 lg:col-span-1">
-                <div class="text-xl font-bold mb-6 tracking-tighter">NEXORA</div>
-                <p class="text-gray-500 text-xs leading-relaxed">Suscríbete para recibir novedades de innovación tecnológica y tips para tu empresa.</p>
-                <div class="mt-4 flex">
-                    <input type="text" placeholder="Tu email" class="bg-white/5 border border-white/10 p-2 text-xs rounded-l-md outline-none w-full">
-                    <button class="bg-blue-600 px-3 rounded-r-md text-xs font-bold">Enviar</button>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-bold text-sm mb-6 uppercase tracking-widest text-gray-500">Producto</h4>
-                <ul class="text-sm space-y-4 text-gray-400">
-                    <li><a href="#" class="hover:text-white">Servicios</a></li>
-                    <li><a href="#" class="hover:text-white">Integraciones</a></li>
-                    <li><a href="#" class="hover:text-white">Seguridad</a></li>
-                    <li><a href="#" class="hover:text-white">Precios</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-sm mb-6 uppercase tracking-widest text-gray-500">Empresa</h4>
-                <ul class="text-sm space-y-4 text-gray-400">
-                    <li><a href="#" class="hover:text-white">Nosotros</a></li>
-                    <li><a href="#" class="hover:text-white">Carreras</a></li>
-                    <li><a href="#" class="hover:text-white">Prensa</a></li>
-                    <li><a href="#" class="hover:text-white">Contacto</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-sm mb-6 uppercase tracking-widest text-gray-500">Legal</h4>
-                <ul class="text-sm space-y-4 text-gray-400">
-                    <li><a href="#" class="hover:text-white">Privacidad</a></li>
-                    <li><a href="#" class="hover:text-white">Términos</a></li>
-                    <li><a href="#" class="hover:text-white">Cumplimiento</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-white/5 text-center text-xs text-gray-500">
-            © 2026 Nexora Global. Todos los derechos reservados. Powered by Readdy.
-        </div>
-    </footer>
-
-    <div class="fixed bottom-6 right-6 z-50">
-        <button class="bg-[#0056FF] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition cursor-pointer">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-        </button>
     </div>
+</nav>
 
-</body>
-</html>
+<!-- Hero -->
+<section class="relative overflow-hidden bg-white pt-20 pb-32">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+            <h1 class="text-5xl lg:text-6xl leading-tight mb-6">
+                Transformamos la forma en que empresas alrededor del mundo <span class="text-[#0056FF]">crecen con IA</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-10 max-w-lg leading-relaxed">
+                Bots para WhatsApp, asistentes web y soluciones SaaS para impulsar el crecimiento de tu empresa con tecnología de vanguardia.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#contacto" class="btn-primary px-8 py-4 text-lg font-bold">Solicitar Demo</a>
+                <a href="#servicios" class="btn-outline px-8 py-4 text-lg font-bold">Ver Servicios</a>
+            </div>
+        </div>
+        <div class="relative fade-in">
+            <div class="absolute -right-20 -top-20 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-70"></div>
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="IA Technology" class="rounded-2xl card-shadow relative z-10">
+        </div>
+    </div>
+</section>
+
+<!-- Clientes -->
+<section class="py-12 border-y border-gray-100 bg-[#F5F5F5]/30 fade-in">
+    <div class="max-w-7xl mx-auto px-6">
+        <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">Confían en nosotros: startups y corporaciones líderes</p>
+        <div class="flex flex-wrap justify-center items-center gap-12 opacity-80 hover:opacity-100 transition duration-300">
+            <img src="https://via.placeholder.com/120x40?text=TechCorp" alt="TechCorp Logo" class="hover:scale-105 transition">
+            <img src="https://via.placeholder.com/120x40?text=DataFlow" alt="DataFlow Logo" class="hover:scale-105 transition">
+            <img src="https://via.placeholder.com/120x40?text=CloudNet" alt="CloudNet Logo" class="hover:scale-105 transition">
+            <img src="https://via.placeholder.com/120x40?text=SecureBase" alt="SecureBase Logo" class="hover:scale-105 transition">
+            <img src="https://via.placeholder.com/120x40?text=InnovateLab" alt="InnovateLab Logo" class="hover:scale-105 transition">
+        </div>
+    </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-4xl mb-4">Todo lo que necesitas para Hacer Crecer tu Negocio</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">Nuestra plataforma integral proporciona todas las herramientas que tu equipo necesita para trabajar más inteligente, rápido y eficiente.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-xl card-shadow flex flex-col h-full fade-in">
+                <div class="text-[#0056FF] mb-6">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                </div>
+                <h3 class="text-xl mb-4">Bots para WhatsApp e IA Web</h3>
+                <p class="text-gray-600 text-sm mb-6 flex-grow">Atención 24/7 capaz de interactuar con clientes, calificar prospectos y gestionar interacciones automáticamente.</p>
+                <ul class="text-sm space-y-3 mb-8 text-gray-500">
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Respuestas automáticas inteligentes</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Integración con CRM y ventas</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Análisis de métricas</li>
+                </ul>
+                <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
+            </div>
+            <div class="bg-[#F5F5F5] p-8 rounded-xl flex flex-col h-full fade-in">
+                <div class="text-[#0056FF] mb-6">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-xl mb-4">Automatización de Procesos</h3>
+                <p class="text-gray-600 text-sm mb-6 flex-grow">Optimización de tareas repetitivas y flujos de trabajo, acelerando la operación hasta 10x.</p>
+                <ul class="text-sm space-y-3 mb-8 text-gray-500">
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Flujos personalizados</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Conexión con herramientas</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Ahorro de recursos</li>
+                </ul>
+                <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
+            </div>
+            <div class="bg-white p-8 rounded-xl card-shadow flex flex-col h-full fade-in">
+                <div class="text-[#0056FF] mb-6">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 class="text-xl mb-4">Consultoría Especializada</h3>
+                <p class="text-gray-600 text-sm mb-6 flex-grow">Estrategias personalizadas para el crecimiento con soporte continuo y seguimiento.</p>
+                <ul class="text-sm space-y-3 mb-8 text-gray-500">
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Análisis de necesidades</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Implementación ágil</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Soporte dedicado</li>
+                </ul>
+                <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resultados/Estadísticas -->
+<section id="resultados" class="bg-[#111111] py-20 text-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-around gap-12 text-center fade-in">
+        <div>
+            <div class="text-5xl counter" data-target="50000">0</div>
+            <div class="text-gray-400 text-sm tracking-widest uppercase">Usuarios Activos</div>
+        </div>
+        <div>
+            <div class="text-5xl counter" data-target="500">0</div>
+            <div class="text-gray-400 text-sm tracking-widest uppercase">Reseñas Excelentes</div>
+        </div>
+        <div>
+            <div class="text-5xl counter" data-target="20">0</div>
+            <div class="text-gray-400 text-sm tracking-widest uppercase">Países Cubiertos</div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonios -->
+<section id="testimonios" class="section-padding bg-[#F5F5F5]">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl text-center mb-16 fade-in">Historias de Clientes</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-xl card-shadow fade-in">
+                <p class="text-gray-600 italic mb-6">"Nexora Global transformó la manera en que nuestro equipo colabora. Los insights impulsados por IA nos permitieron tomar decisiones rápidas."</p>
+                <div class="font-bold text-sm">Sara Martínez</div>
+                <div class="text-xs text-gray-400">VP de Operaciones, TechVision Inc.</div>
+            </div>
+            <div class="bg-white p-8 rounded-xl card-shadow fade-in">
+                <p class="text-gray-600 italic mb-6">"Gracias a Nexora Global optimizamos nuestros procesos de ventas y aumentamos la productividad exponencialmente."</p>
+                <div class="font-bold text-sm">Juan Pérez</div>
+                <div class="text-xs text-gray-400">CEO, Innovate Labs</div>
+            </div>
+            <div class="bg-white p-8 rounded-xl card-shadow fade-in">
+                <p class="text-gray-600 italic mb-6">"El equipo de Nexora transformó nuestra atención al cliente con IA de última generación. La implementación fue impecable."</p>
+                <div class="font-bold text-sm">Laura Gómez</div>
+                <div class="text-xs text-gray-400">CTO, CloudNet</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contacto/Formulario -->
+<section id="contacto" class="section-padding bg-white">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div class="fade-in">
+            <h2 class="text-4xl mb-6">Plataforma Empresarial – Escala tu Negocio Sin Límites</h2>
+            <p class="text-gray-600 mb-8">Automatiza flujos de trabajo, aumenta productividad e impulsa el crecimiento global.</p>
+            <ul class="space-y-4 text-sm font-medium">
+                <li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> SOC 2 Certificado & GDPR Compliance</li>
+                <li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> Soporte prioritario 24/7</li>
+            </ul>
+        </div>
+        <div class="bg-white p-10 rounded-2xl card-shadow border border-gray-100 fade-in">
+            <form class="space-y-4">
+                <label class="block text-xs font-medium text-gray-600">Nombre Completo
+                    <input type="text" placeholder="Tu nombre" class="w-full mt-1 p-3 border border-gray-200 rounded-md outline-none focus:border-blue-500">
+                </label>
+                <label class="block text-xs font-medium text-gray-600">Email Corporativo
+                    <input type="email" placeholder="tu@empresa.com" class="w-full mt-1 p-3 border border-gray-200 rounded-md outline-none focus:border-blue-500">
+                </label>
+                <label class="block text-xs font-medium text-gray-600">Nombre de la Empresa
+                    <input type="text" placeholder="Tu empresa" class="w-full mt-1 p-3 border border-gray-200 rounded-md outline-none focus:border-blue-500">      

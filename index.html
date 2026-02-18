@@ -1,212 +1,237 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexora Global | Enterprise AI & Automation</title>
-    <meta name="description" content="Nexora Global - Plataforma de IA y automatización para empresas, bots WhatsApp, asistentes web y soluciones SaaS.">
-    <meta name="keywords" content="IA, automatización, SaaS, WhatsApp, bots, empresa, tecnología, global">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Global | Enterprise AI & Automation</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary-blue: #0056FF;
+  --secondary-blue: #0044CC;
+  --dark-text: #111111;
+  --light-bg: #F5F5F5;
+  --card-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-text);
+  scroll-behavior: smooth;
+  margin:0;
+  background-color: white;
+}
+h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; font-weight:700; color: var(--dark-text); }
+.section-padding { padding-top:80px; padding-bottom:80px; }
+.btn-primary {
+  background-color: var(--primary-blue);
+  color:white;
+  border-radius:6px;
+  transition: all 0.3s;
+}
+.btn-primary:hover {
+  background-color: var(--secondary-blue);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  border:2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  border-radius:6px;
+  transition: all 0.3s;
+}
+.btn-outline:hover { background-color: rgba(0,86,255,0.05); }
+.card-shadow { box-shadow: var(--card-shadow); border-radius:12px; }
+input, select, textarea { outline:none; }
+</style>
 </head>
-<body>
+<body class="bg-white">
 
-    <!-- Navbar -->
-    <nav class="sticky-nav">
-        <div class="container flex-between">
-            <div class="logo">NEXORA<span class="primary-color">GLOBAL</span></div>
-            <div class="menu-links">
-                <a href="#servicios">Servicios</a>
-                <a href="#soluciones">Soluciones</a>
-                <a href="#testimonios">Testimonios</a>
-                <a href="#resultados">Resultados</a>
-            </div>
-            <div class="actions">
-                <a href="#" class="login">Iniciar Sesión</a>
-                <a href="#contacto" class="btn-primary">Solicitar Demo</a>
-            </div>
-        </div>
-    </nav>
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold tracking-tighter text-black">NEXORA<span class="text-[#0056FF]">GLOBAL</span></div>
+    <div class="hidden lg:flex space-x-8 text-sm font-medium">
+      <a href="#servicios" class="hover:text-blue-600 transition">Servicios</a>
+      <a href="#soluciones" class="hover:text-blue-600 transition">Soluciones</a>
+      <a href="#testimonios" class="hover:text-blue-600 transition">Testimonios</a>
+      <a href="#resultados" class="hover:text-blue-600 transition">Resultados</a>
+      <a href="#contacto" class="hover:text-blue-600 transition">Contacto</a>
+    </div>
+    <div class="flex items-center space-x-4">
+      <a href="#" class="text-sm font-semibold">Iniciar Sesión</a>
+      <a href="#contacto" class="btn-primary px-6 py-2.5 text-sm font-bold">Solicitar Demo</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container grid-2">
-            <div class="hero-text">
-                <h1>Transformamos la forma en que empresas alrededor del mundo <span class="primary-color">crecen con IA</span></h1>
-                <p>Bots para WhatsApp, asistentes web y soluciones SaaS para impulsar el crecimiento de tu empresa con tecnología de vanguardia.</p>
-                <div class="hero-buttons">
-                    <a href="#contacto" class="btn-primary btn-lg">Solicitar Demo</a>
-                    <a href="#servicios" class="btn-outline btn-lg">Ver Servicios</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="assets/images/ia-hero.webp" alt="IA Technology" class="rounded-card shadow-card">
-                <div class="blur-circle"></div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="relative overflow-hidden bg-white pt-20 pb-32">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <h1 class="text-5xl lg:text-6xl leading-tight mb-6">
+        Transformamos la forma en que empresas alrededor del mundo <span class="text-[#0056FF]">crecen con IA</span>
+      </h1>
+      <p class="text-lg text-gray-600 mb-10 max-w-lg leading-relaxed">
+        Bots para WhatsApp, asistentes web y soluciones SaaS para impulsar el crecimiento de tu empresa con tecnología de vanguardia.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contacto" class="btn-primary px-8 py-4 text-lg font-bold">Solicitar Demo</a>
+        <a href="#servicios" class="btn-outline px-8 py-4 text-lg font-bold">Ver Servicios</a>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute -right-20 -top-20 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-70"></div>
+      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="IA Technology" class="rounded-2xl card-shadow relative z-10">
+    </div>
+  </div>
+</section>
 
-    <!-- Clientes -->
-    <section class="clients">
-        <p class="text-center uppercase">Confían en nosotros: startups y corporaciones líderes</p>
-        <div class="client-logos">
-            <span class="client">TechCorp</span>
-            <span class="client">DataFlow</span>
-            <span class="client">CloudNet</span>
-            <span class="client">SecureBase</span>
-            <span class="client">InnovateLab</span>
-        </div>
-    </section>
+<!-- CLIENTES -->
+<section class="py-12 border-y border-gray-100 bg-[#F5F5F5]/30">
+  <div class="max-w-7xl mx-auto px-6">
+    <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">Confían en nosotros: startups y corporaciones líderes</p>
+    <div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale">
+      <span class="text-xl font-bold">TechCorp</span>
+      <span class="text-xl font-bold">DataFlow</span>
+      <span class="text-xl font-bold">CloudNet</span>
+      <span class="text-xl font-bold">SecureBase</span>
+      <span class="text-xl font-bold">InnovateLab</span>
+    </div>
+  </div>
+</section>
 
-    <!-- Servicios -->
-    <section id="servicios" class="services section-padding">
-        <div class="container text-center">
-            <h2>Todo lo que necesitas para Hacer Crecer tu Negocio</h2>
-            <p class="subtitle">Nuestra plataforma integral proporciona todas las herramientas que tu equipo necesita para trabajar más inteligente, rápido y eficiente.</p>
+<!-- SERVICIOS -->
+<section id="servicios" class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl mb-4">Todo lo que necesitas para Hacer Crecer tu Negocio</h2>
+      <p class="text-gray-500 max-w-2xl mx-auto">Nuestra plataforma integral proporciona todas las herramientas que tu equipo necesita para trabajar más inteligente, rápido y eficiente.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Bot Web -->
+      <div class="bg-white p-8 rounded-xl card-shadow flex flex-col h-full">
+        <div class="text-[#0056FF] mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
         </div>
-        <div class="container grid-3">
-            <div class="service-card">
-                <div class="icon">💬</div>
-                <h3>Bots para WhatsApp e IA Web</h3>
-                <p>Atención 24/7 capaz de interactuar con clientes, calificar prospectos y gestionar interacciones automáticamente.</p>
-                <ul>
-                    <li>✓ Respuestas automáticas</li>
-                    <li>✓ Integración con CRM</li>
-                    <li>✓ Análisis de métricas</li>
-                </ul>
-                <a href="#">Conocer Más →</a>
-            </div>
-            <div class="service-card highlight">
-                <div class="icon">⚡</div>
-                <h3>Automatización de Procesos</h3>
-                <p>Optimización de tareas repetitivas y flujos de trabajo, acelerando la operación hasta 10x.</p>
-                <ul>
-                    <li>✓ Flujos personalizados</li>
-                    <li>✓ Conexión con herramientas</li>
-                    <li>✓ Ahorro de recursos</li>
-                </ul>
-                <a href="#">Conocer Más →</a>
-            </div>
-            <div class="service-card">
-                <div class="icon">🛠️</div>
-                <h3>Consultoría Especializada</h3>
-                <p>Estrategias personalizadas para el crecimiento con soporte continuo y seguimiento.</p>
-                <ul>
-                    <li>✓ Análisis de necesidades</li>
-                    <li>✓ Implementación ágil</li>
-                    <li>✓ Soporte dedicado</li>
-                </ul>
-                <a href="#">Conocer Más →</a>
-            </div>
-        </div>
-    </section>
+        <h3 class="text-xl mb-4">Bots para WhatsApp e IA Web</h3>
+        <p class="text-gray-600 text-sm mb-6 flex-grow">Atención 24/7 capaz de interactuar con clientes, calificar prospectos y gestionar interacciones.</p>
+        <ul class="text-sm space-y-3 mb-8 text-gray-500">
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Respuestas automáticas inteligentes</li>
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Integración con CRM</li>
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Análisis de métricas y conversaciones</li>
+        </ul>
+        <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
+      </div>
 
-    <!-- Resultados -->
-    <section id="resultados" class="results bg-dark text-white">
-        <div class="container flex-around text-center">
-            <div class="counter" data-target="50000">0</div>
-            <p>Usuarios Activos</p>
-            <div class="counter" data-target="500">0</div>
-            <p>Reseñas Excelentes</p>
-            <div class="counter" data-target="20">0</div>
-            <p>Países Cubiertos</p>
+      <!-- Automatización -->
+      <div class="bg-[#F5F5F5] p-8 rounded-xl flex flex-col h-full">
+        <div class="text-[#0056FF] mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
         </div>
-    </section>
+        <h3 class="text-xl mb-4">Automatización de Procesos</h3>
+        <p class="text-gray-600 text-sm mb-6 flex-grow">Optimización de tareas repetitivas y flujos de trabajo, acelerando la operación hasta 10x.</p>
+        <ul class="text-sm space-y-3 mb-8 text-gray-500">
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Flujos personalizados</li>
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Integración con herramientas existentes</li>
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Ahorro de recursos</li>
+        </ul>
+        <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
+      </div>
 
-    <!-- Testimonios -->
-    <section id="testimonios" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="text-center">Historias de Clientes</h2>
-            <div class="grid-3 gap">
-                <div class="testimonial">
-                    <p>"Nexora Global transformó la manera en que nuestro equipo colabora. Los insights impulsados por IA nos permitieron tomar decisiones rápidas."</p>
-                    <strong>Sara Martínez</strong>
-                    <small>VP de Operaciones, TechVision Inc.</small>
-                </div>
-                <div class="testimonial">
-                    <p>"Gracias a Nexora Global optimizamos nuestros procesos de ventas y aumentamos la productividad exponencialmente."</p>
-                    <strong>Juan Pérez</strong>
-                    <small>CEO, Innovate Labs</small>
-                </div>
-                <div class="testimonial">
-                    <p>"El equipo de Nexora transformó nuestra atención al cliente con IA de última generación. La implementación fue impecable."</p>
-                    <strong>Laura Gómez</strong>
-                    <small>CTO, CloudNet</small>
-                </div>
-            </div>
+      <!-- Consultoría -->
+      <div class="bg-white p-8 rounded-xl card-shadow flex flex-col h-full">
+        <div class="text-[#0056FF] mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
         </div>
-    </section>
+        <h3 class="text-xl mb-4">Consultoría Especializada</h3>
+        <p class="text-gray-600 text-sm mb-6 flex-grow">Estrategias personalizadas para el crecimiento con soporte continuo y seguimiento.</p>
+        <ul class="text-sm space-y-3 mb-8 text-gray-500">
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Análisis de necesidades</li>
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Implementación ágil</li>
+          <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Soporte dedicado</li>
+        </ul>
+        <a href="#" class="text-[#0056FF] font-bold text-sm hover:underline">Conocer Más →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="contact section-padding">
-        <div class="container grid-2 gap">
-            <div>
-                <h2>Plataforma Empresarial – Escala tu Negocio Sin Límites</h2>
-                <p>Automatiza flujos de trabajo, aumenta productividad e impulsa el crecimiento global.</p>
-                <ul class="features">
-                    <li>✓ SOC 2 Certificado & GDPR Compliance</li>
-                    <li>✓ Soporte prioritario 24/7</li>
-                </ul>
-            </div>
-            <div class="form-card">
-                <form>
-                    <input type="text" placeholder="Nombre Completo" required>
-                    <input type="email" placeholder="Email Corporativo" required>
-                    <input type="text" placeholder="Nombre de la Empresa" required>
-                    <select required>
-                        <option value="">Tamaño del equipo</option>
-                        <option>1-10 empleados</option>
-                        <option>11-50 empleados</option>
-                        <option>50+ empleados</option>
-                    </select>
-                    <button class="btn-primary btn-lg">Solicitar Demo Gratis</button>
-                    <p class="text-center small">Al registrarte, aceptas nuestros Términos y Política de Privacidad.</p>
-                </form>
-            </div>
-        </div>
-    </section>
+<!-- RESULTADOS -->
+<section id="resultados" class="bg-[#111111] py-20 text-white">
+  <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-around gap-12 text-center">
+    <div>
+      <div class="text-5xl font-bold mb-2">50K+</div>
+      <div class="text-gray-400 text-sm tracking-widest uppercase">Usuarios Activos</div>
+    </div>
+    <div>
+      <div class="text-5xl font-bold mb-2">500+</div>
+      <div class="text-gray-400 text-sm tracking-widest uppercase">Reseñas Excelentes</div>
+    </div>
+    <div>
+      <div class="text-5xl font-bold mb-2">20+</div>
+      <div class="text-gray-400 text-sm tracking-widest uppercase">Países Cubiertos</div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer bg-dark text-white">
-        <div class="container grid-footer">
-            <div>
-                <h3>NEXORA GLOBAL</h3>
-                <p>Suscríbete para recibir novedades de innovación tecnológica y tips para tu empresa.</p>
-                <div class="subscribe-form">
-                    <input type="text" placeholder="Tu email">
-                    <button>Enviar</button>
-                </div>
-            </div>
-            <div>
-                <h4>Producto</h4>
-                <ul>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Integraciones</a></li>
-                    <li><a href="#">Seguridad</a></li>
-                    <li><a href="#">Precios</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Empresa</h4>
-                <ul>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Carreras</a></li>
-                    <li><a href="#">Prensa</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Términos</a></li>
-                    <li><a href="#">Cumplimiento</a></li>
-                </ul>
-            </div>
-        </div>
-        <p class="text-center small mt-8">© 2026 Nexora Global. Todos los derechos reservados. Powered by Readdy.</p>
-    </footer>
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="section-padding bg-[#F5F5F5]">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl text-center mb-16">Historias de Clientes</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-xl card-shadow">
+        <p class="text-gray-600 italic mb-6">"Nexora Global transformó la manera en que nuestro equipo colabora. Los insights impulsados por IA nos permitieron tomar decisiones rápidas."</p>
+        <div class="font-bold text-sm">Sara Martínez</div>
+        <div class="text-xs text-gray-400">VP de Operaciones, TechVision Inc.</div>
+      </div>
+      <div class="bg-white p-8 rounded-xl card-shadow">
+        <p class="text-gray-600 italic mb-6">"Gracias a Nexora Global optimizamos nuestros procesos de ventas y aumentamos la productividad exponencialmente."</p>
+        <div class="font-bold text-sm">Juan Pérez</div>
+        <div class="text-xs text-gray-400">CEO, Innovate Labs</div>
+      </div>
+      <div class="bg-white p-8 rounded-xl card-shadow">
+        <p class="text-gray-600 italic mb-6">"El equipo de Nexora transformó nuestra atención al cliente con IA de última generación. La implementación fue impecable."</p>
+        <div class="font-bold text-sm">Laura Gómez</div>
+        <div class="text-xs text-gray-400">CTO, CloudNet</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="scripts.js"></script>
-</body>
-</html>
+<!-- CONTACTO -->
+<section id="contacto" class="section-padding bg-white">
+  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 class="text-4xl mb-6">Plataforma Empresarial – Escala tu Negocio Sin Límites</h2>
+      <p class="text-gray-600 mb-8">Automatiza flujos de trabajo, aumenta productividad e impulsa el crecimiento global.</p>
+      <ul class="space-y-4 text-sm font-medium">
+        <li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> SOC 2 Certificado & GDPR Compliance</li>
+        <li class="flex items-center gap-3"><svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> Soporte prioritario 24/7</li>
+      </ul>
+    </div>
+    <div class="bg-white p-10 rounded-2xl card-shadow border border-gray-100">
+      <form class="space-y-4">
+        <input type="text" placeholder="Nombre Completo" class="w-full p-3 border border-gray-200 rounded-md focus:border-blue-500">
+        <input type="email" placeholder="Email Corporativo" class="w-full p-3 border border-gray-200 rounded-md focus:border-blue-500">
+        <input type="text" placeholder="Nombre de la Empresa" class="w-full p-3 border border-gray-200 rounded-md focus:border-blue-500">
+        <select class="w-full p-3 border border-gray-200 rounded-md focus:border-blue-500 text-gray-500">
+          <option>Tamaño del equipo</option>
+          <option>1-10 empleados</option>
+          <option>11-50 empleados</option>
+          <option>50+ empleados</option>
+        </select>
+        <button class="btn-primary w-full py-4 font-bold shadow-lg shadow-blue-500/20">Solicitar Demo Gratis</button>
+        <p class="text-[10px] text-gray-400 text-center">Al registrarte, aceptas nuestros Términos y Política de Privacidad.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#111111] text-white pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
+    <div class="col-span-2 lg:col-span-1">
+      <div class="text-xl font-bold mb-6 tracking-tighter">NEXORA</div>
+      <p class="text-gray-500 text-xs leading-relaxed">Suscríbete para recibir novedades de innovación tecnológica y tips para tu empresa.</p>
+      <div class

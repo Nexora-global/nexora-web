@@ -235,3 +235,63 @@ input, select, textarea { outline:none; }
       <div class="text-xl font-bold mb-6 tracking-tighter">NEXORA</div>
       <p class="text-gray-500 text-xs leading-relaxed">Suscríbete para recibir novedades de innovación tecnológica y tips para tu empresa.</p>
       <div class
+        <!-- ======================================================
+PARTE 1 – BASE PROFESIONAL / HEAD / CONFIGURACIÓN GLOBAL
+====================================================== -->
+
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nexora Global | IA & Automatización Empresarial</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Nexora Global impulsa empresas con inteligencia artificial, automatización y soluciones digitales de nivel enterprise." />
+  <meta name="keywords" content="IA empresarial, automatización, bots WhatsApp, inteligencia artificial, SaaS, Nexora Global" />
+  <meta name="author" content="Nexora Global" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nexora Global | Enterprise AI" />
+  <meta property="og:description" content="Automatizamos procesos y escalamos empresas con inteligencia artificial." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Configuración Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0056FF',
+            dark: '#0F172A',
+            muted: '#64748B'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-900">

@@ -42,6 +42,7 @@
       text-align: center;
       max-width: 1100px;
       margin: auto;
+      animation: fadeUp 1s ease both;
     }
 
     header h1 {
@@ -54,6 +55,11 @@
       background: linear-gradient(90deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      transition: filter .3s ease;
+    }
+
+    header h1:hover span {
+      filter: drop-shadow(0 0 14px rgba(99,102,241,0.7));
     }
 
     header p {
@@ -77,6 +83,8 @@
       font-weight: 600;
       text-decoration: none;
       transition: all .3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-primary {
@@ -85,19 +93,33 @@
       box-shadow: var(--shadow);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
-    }
-
     .btn-outline {
       border: 2px solid var(--primary);
       color: var(--primary);
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 70%);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    .btn:hover::after {
+      opacity: 1;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.05);
     }
 
     section {
       padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
+      animation: fadeUp 1s ease both;
     }
 
     .grid {
@@ -111,11 +133,27 @@
       border-radius: var(--radius);
       padding: 30px;
       box-shadow: var(--shadow);
-      transition: transform .3s ease;
+      transition: all .4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(59,130,246,0.18), transparent);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 30px 60px rgba(59,130,246,0.25);
     }
 
     .card h3 {
@@ -132,6 +170,20 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--primary), transparent);
       margin: 80px 0;
+      position: relative;
+    }
+
+    .divider::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -2px;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 999px;
+      opacity: .7;
     }
 
     footer {
@@ -139,13 +191,25 @@
       padding: 60px 20px;
       color: var(--text-muted);
       font-size: .9rem;
+      animation: fadeUp 1s ease both;
+    }
+
+    /* ANIMACIONES */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
   <header>
     <h1>Impulsamos empresas con <span>Inteligencia Artificial</span></h1>
     <p>
@@ -161,82 +225,54 @@
 
   <div class="divider"></div>
 
-  <!-- SERVICIOS -->
   <section id="servicios">
     <div class="grid">
       <div class="card">
         <h3>🤖 Bots Inteligentes</h3>
-        <p>
-          Bots conversacionales entrenados con IA avanzada para ventas,
-          atención al cliente y soporte interno.
-        </p>
+        <p>Bots conversacionales entrenados con IA avanzada para ventas y atención al cliente.</p>
       </div>
 
       <div class="card">
         <h3>⚙️ Automatización Empresarial</h3>
-        <p>
-          Automatizamos procesos repetitivos para reducir costos,
-          errores humanos y tiempos operativos.
-        </p>
+        <p>Optimización de procesos para reducir costos y escalar operaciones.</p>
       </div>
 
       <div class="card">
         <h3>📊 IA para Decisiones</h3>
-        <p>
-          Análisis inteligente de datos para decisiones estratégicas
-          basadas en información real.
-        </p>
+        <p>Análisis estratégico de datos en tiempo real.</p>
       </div>
 
       <div class="card">
         <h3>🌐 Integraciones Globales</h3>
-        <p>
-          Integración con WhatsApp, CRMs, sistemas internos
-          y plataformas empresariales.
-        </p>
+        <p>WhatsApp, CRMs y sistemas empresariales integrados.</p>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- VISIÓN -->
   <section>
     <div class="grid">
       <div class="card">
         <h3>Visión Global</h3>
-        <p>
-          Diseñamos tecnología con estándares Fortune 500,
-          preparada para escalar a nivel internacional.
-        </p>
+        <p>Tecnología preparada para escalar a nivel internacional.</p>
       </div>
 
       <div class="card">
         <h3>Enfoque Estratégico</h3>
-        <p>
-          No vendemos software. Creamos sistemas que generan
-          impacto real en el negocio.
-        </p>
+        <p>Sistemas diseñados para impacto real en negocio.</p>
       </div>
 
       <div class="card">
         <h3>Seguridad & Confianza</h3>
-        <p>
-          Arquitecturas seguras, escalables y alineadas
-          con las mejores prácticas del mercado.
-        </p>
+        <p>Arquitecturas seguras y alineadas con estándares enterprise.</p>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer id="contacto">
-    <p>
-      © 2026 Nexora Global · Enterprise AI & Automation  
-    </p>
-    <p>
-      Preparado para integrar Nexora AI Bot
-    </p>
+    <p>© 2026 Nexora Global · Enterprise AI & Automation</p>
+    <p>Preparado para integrar Nexora AI Bot</p>
   </footer>
 
 </body>

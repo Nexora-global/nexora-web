@@ -9,237 +9,253 @@
 
 <style>
 :root{
-  --bg:#050814;
-  --bg-soft:#0b0f19;
-  --card:#11162b;
-  --primary:#3b82f6;
-  --secondary:#6366f1;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --radius:16px;
-  --shadow:0 30px 80px rgba(0,0,0,.45);
+--bg:#050814;
+--card:#0f172a;
+--primary:#6366f1;
+--secondary:#3b82f6;
+--text:#e5e7eb;
+--muted:#9ca3af;
+--radius:16px;
+--shadow:0 30px 80px rgba(0,0,0,.6);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 
 body{
-  background:radial-gradient(circle at top,#0e1438,#050814);
-  color:var(--text);
-  overflow-x:hidden;
+background:radial-gradient(circle at top,#0b0f19,#050814 60%);
+color:var(--text);
+overflow-x:hidden;
 }
-
-/* LIGHT FOLLOW CURSOR */
-.light{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:radial-gradient(600px at var(--x) var(--y),
-    rgba(99,102,241,.15),transparent 40%);
-  z-index:0;
-}
-
-/* GLOBAL */
-section,header,footer{position:relative;z-index:1}
-section{max-width:1200px;margin:auto;padding:110px 20px}
-h2{font-size:2.5rem;margin-bottom:20px}
-p{color:var(--muted);line-height:1.7}
 
 /* HERO */
-header{
-  padding:140px 20px 120px;
-  text-align:center;
-  max-width:1200px;
-  margin:auto;
-}
-header h1{
-  font-size:3.6rem;
-  margin-bottom:25px;
-}
-header span{
-  background:linear-gradient(90deg,var(--primary),var(--secondary));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.cta{
-  margin-top:50px;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  flex-wrap:wrap;
-}
-.btn{
-  padding:16px 36px;
-  border-radius:999px;
-  font-weight:600;
-  text-decoration:none;
-  transition:.4s;
-}
-.btn-primary{
-  background:linear-gradient(90deg,var(--primary),var(--secondary));
-  color:white;
-  box-shadow:var(--shadow);
-}
-.btn-primary:hover{transform:translateY(-4px) scale(1.04)}
-.btn-outline{
-  border:2px solid var(--primary);
-  color:var(--primary);
-}
-.btn-outline:hover{
-  background:var(--primary);
-  color:white;
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px;
 }
 
-/* GRID / CARDS */
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:url("https://images.unsplash.com/photo-1639322537504-6427a16b0a28?q=80&w=2000&auto=format&fit=crop") center/cover no-repeat;
+opacity:.25;
+z-index:-2;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(180deg,transparent,#050814 85%);
+z-index:-1;
+}
+
+.hero h1{
+font-size:3.2rem;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:760px;
+margin:auto;
+color:var(--muted);
+font-size:1.15rem;
+}
+
+.cta{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 34px;
+border-radius:999px;
+font-weight:600;
+text-decoration:none;
+transition:.35s ease;
+}
+
+.btn-primary{
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+color:white;
+box-shadow:0 0 40px rgba(99,102,241,.5);
+}
+
+.btn-primary:hover{transform:translateY(-4px)}
+
+.btn-outline{
+border:2px solid var(--primary);
+color:var(--primary);
+}
+
+/* SECTIONS */
+section{
+max-width:1200px;
+margin:auto;
+padding:100px 20px;
+}
+
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:36px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
 }
+
+/* CARDS */
 .card{
-  background:linear-gradient(180deg,#141a33,#0d1226);
-  border-radius:var(--radius);
-  padding:40px;
-  box-shadow:var(--shadow);
-  transition:.5s;
-  opacity:0;
-  transform:translateY(40px);
+background:linear-gradient(180deg,#111827,#0b1022);
+border-radius:var(--radius);
+padding:36px;
+box-shadow:var(--shadow);
+transition:.4s ease;
+position:relative;
+overflow:hidden;
 }
-.card.visible{
-  opacity:1;
-  transform:translateY(0);
+
+.card::after{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at top,rgba(99,102,241,.15),transparent 70%);
+opacity:0;
+transition:.4s;
 }
-.card:hover{
-  transform:translateY(-12px) scale(1.02);
+
+.card:hover::after{opacity:1}
+.card:hover{transform:translateY(-8px)}
+
+.card img{
+width:56px;
+margin-bottom:20px;
 }
+
+.card h3{margin-bottom:12px}
+.card p{color:var(--muted);font-size:.95rem}
 
 /* ENTERPRISE */
 .enterprise{
-  background:linear-gradient(180deg,#0b1024,#050814);
-  border-radius:32px;
-  padding:80px;
-}
-.enterprise-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:60px;
-}
-.enterprise ul{
-  list-style:none;
-  margin-top:30px;
-}
-.enterprise li{
-  margin-bottom:16px;
-  font-size:1.05rem;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
 }
 
-/* IMAGES PLACEHOLDER */
-.img-box{
-  background:linear-gradient(135deg,#1f2560,#11162b);
-  border-radius:24px;
-  height:100%;
-  min-height:320px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#7c83ff;
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-/* DIVIDER */
-.divider{
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--primary),transparent);
-  margin:120px 0;
-  opacity:.5;
+.enterprise img{
+width:100%;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
 }
 
 /* FOOTER */
 footer{
-  text-align:center;
-  padding:80px 20px;
-  color:var(--muted);
+text-align:center;
+padding:60px 20px;
+color:var(--muted);
+font-size:.9rem;
+}
+
+/* ANIMATIONS */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:none;
+}
+
+@media(max-width:900px){
+.hero h1{font-size:2.4rem}
+.enterprise{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
-<div class="light"></div>
 
-<header>
-  <h1>Enterprise <span>Artificial Intelligence</span><br>for Global Leaders</h1>
-  <p>
-    Nexora Global diseña ecosistemas de IA, automatización y bots inteligentes
-    para empresas que piensan en escala, dominio y futuro.
-  </p>
-  <div class="cta">
-    <a href="#enterprise" class="btn btn-primary">Enterprise Solutions</a>
-    <a href="#contacto" class="btn btn-outline">Hablar con Nexora AI</a>
-  </div>
-</header>
+<!-- HERO -->
+<div class="hero reveal">
+<div>
+<h1>Enterprise <span>Artificial Intelligence</span><br>Built to Scale</h1>
+<p>
+Diseñamos sistemas de inteligencia artificial, automatización y bots empresariales
+con estándares Fortune 500 para compañías que buscan liderazgo global.
+</p>
+<div class="cta">
+<a class="btn btn-primary">Solicitar Demo</a>
+<a class="btn btn-outline">Contacto Enterprise</a>
+</div>
+</div>
+</div>
 
+<!-- SERVICES -->
 <section>
-  <h2>Core Capabilities</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>🤖 Intelligent AI Bots</h3>
-      <p>Agentes entrenados con lógica empresarial, ventas, soporte y decisión.</p>
-    </div>
-    <div class="card">
-      <h3>⚙️ Process Automation</h3>
-      <p>Flujos automáticos que operan 24/7 sin errores humanos.</p>
-    </div>
-    <div class="card">
-      <h3>📊 Predictive Intelligence</h3>
-      <p>IA aplicada a datos para decisiones estratégicas de alto impacto.</p>
-    </div>
-  </div>
+<div class="grid">
+<div class="card reveal">
+<img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+<h3>Bots Inteligentes</h3>
+<p>IA conversacional avanzada entrenada para ventas, soporte y operaciones.</p>
+</div>
+
+<div class="card reveal">
+<img src="https://cdn-icons-png.flaticon.com/512/921/921490.png">
+<h3>Automatización</h3>
+<p>Optimización total de procesos empresariales con flujos inteligentes.</p>
+</div>
+
+<div class="card reveal">
+<img src="https://cdn-icons-png.flaticon.com/512/2942/2942813.png">
+<h3>Data & Decisiones</h3>
+<p>Análisis predictivo para decisiones estratégicas basadas en datos reales.</p>
+</div>
+</div>
 </section>
 
-<div class="divider"></div>
-
-<section id="enterprise">
-  <div class="enterprise">
-    <div class="enterprise-grid">
-      <div>
-        <h2>Enterprise Grade Systems</h2>
-        <p>
-          Arquitecturas diseñadas para compañías que operan a nivel regional y global.
-        </p>
-        <ul>
-          <li>✔ Seguridad y escalabilidad corporativa</li>
-          <li>✔ Integraciones WhatsApp, CRM, ERP</li>
-          <li>✔ Bots privados entrenados con datos propios</li>
-          <li>✔ Infraestructura lista para miles de usuarios</li>
-        </ul>
-      </div>
-      <div class="img-box">
-        ENTERPRISE IMAGE / DASHBOARD
-      </div>
-    </div>
-  </div>
+<!-- ENTERPRISE -->
+<section>
+<div class="enterprise">
+<img src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?q=80&w=1200&auto=format&fit=crop">
+<div class="reveal">
+<h2>Enterprise Grade Architecture</h2>
+<p style="margin-top:16px;color:var(--muted)">
+Infraestructura escalable, segura y preparada para integrarse con sistemas críticos,
+CRMs, ERPs y plataformas globales.
+</p>
+</div>
+</div>
 </section>
 
-<footer id="contacto">
-  <p>© 2026 Nexora Global · Enterprise AI & Automation</p>
-  <p>Designed for scale. Built for dominance.</p>
+<footer>
+© 2026 Nexora Global · Enterprise AI & Automation<br>
+Preparado para integración de Nexora AI Bot
 </footer>
 
 <script>
-/* SCROLL ANIMATIONS */
-const cards=document.querySelectorAll('.card');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add('visible');
-  });
-},{threshold:.2});
-cards.forEach(c=>observer.observe(c));
-
-/* LIGHT FOLLOW MOUSE */
-document.addEventListener('mousemove',e=>{
-  document.documentElement.style.setProperty('--x',e.clientX+'px');
-  document.documentElement.style.setProperty('--y',e.clientY+'px');
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+reveals.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){el.classList.add("active")}
+});
 });
 </script>
+
 </body>
 </html>
